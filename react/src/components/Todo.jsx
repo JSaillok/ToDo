@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TodoItem from "./TodoItem";
 
 export default function Todo() {
     const [todo, setTodo] = useState("");
@@ -6,8 +7,7 @@ export default function Todo() {
     function handleSubmit(e) {
         e.preventDefault();
         setTodos([...todos,todo]);
-        //by this we can stack the todos.
-        setTodo(""); // clears input
+        setTodo("");
     }
     return(
         <div>
@@ -19,7 +19,11 @@ export default function Todo() {
                 />
                 <button type="submit">Add</button>
             </form>
-            {console.log(todos)}
+            {/* {todos} in this way it shows the stacked todo items one next to other*/}
+            {todos.map(item=> (
+                //<h3>{item}</h3> by this occurs error about unique key
+                <TodoItem key={item} item={item}/>
+            ))}
         </div>
     );
 }

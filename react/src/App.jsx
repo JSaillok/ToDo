@@ -1,9 +1,10 @@
+import InlinneComponent from "./components/InlineComponent";
 import Todo from "./components/Todo"
 
 function App() {
   return (
     <div className="App">
-      <Todo />
+      <InlinneComponent />
     </div>
   )
 }

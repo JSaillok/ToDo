@@ -1,9 +1,8 @@
-import '../css/style.css'
-// ../ one folder back
+import styles from "./inlinecomponent.module.css";
 export default function InlinneComponent() {
     return(
         <div>
-            <h1 className="header">Inline Component</h1>
+            <h1 className={styles.header}>Inline Component</h1>
         </div>
     );
 }
